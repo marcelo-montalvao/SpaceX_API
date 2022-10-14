@@ -1,8 +1,9 @@
+const connector = require("./connector");
+
 class LaunchService {
   async getNext() {
     try {
-      //TODO: Chamar API SpaceX para listar todos próximos os lançamentos
-      return await { title: "exibindo o proximo lançamento" };
+      return await connector.callFetch("https://api.spacexdata.com/v5/launches/next");
     } catch (err) {
       throw new Error(err);
     }
@@ -10,8 +11,7 @@ class LaunchService {
 
   async getNextList() {
     try {
-      //TODO: Chamar API SpaceX para listar todos próximos os lançamentos
-      return await [{ title: "listando os proximos lançamentos" }];
+      return await connector.callFetch("https://api.spacexdata.com/v5/launches/upcoming");
     } catch (err) {
       throw new Error(err);
     }
@@ -19,8 +19,7 @@ class LaunchService {
 
   async getPrevious() {
     try {
-      //TODO: Chamar API SpaceX para listar todos próximos os lançamentos
-      return await { title: "exibindo ultimo lançamento" };
+      return await connector.callFetch("https://api.spacexdata.com/v5/launches/latest");
     } catch (err) {
       throw new Error(err);
     }
@@ -28,8 +27,7 @@ class LaunchService {
 
   async getPreviousList() {
     try {
-      //TODO: Chamar API SpaceX para listar todos próximos os lançamentos
-      return await [{ title: "listando os lançamentos passados" }];
+      return await connector.callFetch("https://api.spacexdata.com/v5/launches/past");
     } catch (err) {
       throw new Error(err);
     }
