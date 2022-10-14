@@ -2,7 +2,7 @@
   "name": "spacex_api",
   "version": "1.0.0",
   "description": "Interface de integração entre aplicação react e API da SpaceX.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
